@@ -11,10 +11,10 @@ module.exports = (server) => {
         const ip = req.headers['x-forwarded-for'] || req.socket.remoteAddress;
         console.log('새로운 클라이언트 접속', ip);
         ws.on('message', (message) => { // 클라이언트로부터 메시지 수신시 발생하는 이벤트 (message event)
-            console.log(message);
+            console.log(message.toString('utf8'));
         });
         ws.on('error', (error) => { // 에러 발생시 발생하는 이벤트 (error event)
-            console.error(error);
+            console.error(error.toString('utf8'));
         });
         ws.on('close', () => { // 연결 종료시
             console.log('클라이언트 접속 해제', ip);
