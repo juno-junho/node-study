@@ -1,4 +1,6 @@
 const WebSocket = require('ws');
+const SocketIO = require('socket.io');
+
 /**
  * 웹 소켓은 이벤트 기반으로 작동한다. 
  * 실시간으로 데이터 전달 받으므로 항상 대기하고 있어야 한다.
@@ -27,5 +29,37 @@ module.exports = (server) => {
             }
         }, 3000);
         ws.interval = interval;
+    });
+};
+
+module.exports = (server) => {
+    const io = SocketIO(server, { path: '/socket.io' }); // 서버와 연결 및 옵션 객체를 두번째 인수로 넣어 서버에 관한 여러 설정 가능
+    // 여기서는 클라이언트가 접속할 경로인 path 옵션만 사용. 클라이언트에서도 이 경로와 일치하는 path를 넣어야한다.
+
+    io.on('connection', (socket) => { // connection 이벤트 -> 클라이언트 접속했을때 발생, socket 객체를 콜백으로 제공
+        const req = socket.request; // 요청 객체에 접근 가능
+        const res = socket.request.res; // 응답 객체에 접근 가능
+        const socketId = socket.id; // 소켓 고유 아이디 확인 가능 -> 주인이 누군지 알 수 있음
+
+        const ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress;
+        console.log('새로운 클라이언트 접속!', ip, socket.id, req.ip);
+
+        socket.on('disconnect', () => {
+            console.log('클라이언트 접속 해제', ip, socket.id);
+            clearInterval(socket.interval);
+        });
+
+        socket.on('error', (error) => {
+            console.error(error);
+        });
+
+        socket.on('reply', (data) => { // 클라이언트로부터 메시지 수신시 발생하는 이벤트
+            console.log(data);
+        });
+
+        const interval = setInterval(() => {
+            socket.emit('news', 'Hello Socket.IO'); // (이벤트 이름, 데이터)
+        }, 3000);
+        socket.interval = interval;
     });
 }
