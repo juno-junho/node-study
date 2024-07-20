@@ -10,6 +10,7 @@ dotenv.config();
 
 const webSocket = require('./socket');
 const indexRouter = require('./routes');
+const connect = require('./schemas');
 
 const app = express();
 app.set('port', process.env.PORT || 8005); // 포트 8005번으로 설정
@@ -18,6 +19,7 @@ nunjucks.configure('views', {
   express: app,
   watch: true,
 });
+connect();
 
 app.use(morgan('dev'));
 app.use(express.static(path.join(__dirname, 'public')));
