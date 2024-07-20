@@ -63,3 +63,29 @@ module.exports = (server) => {
         socket.interval = interval;
     });
 }
+
+module.exprots = (server,app) =>{
+    const io = SocketIO(server, {path: '/socket.io'});
+    app.set('io', io); // req.app.get('io')로 접근 가능
+    const room = io.of('/room'); // of: socket.io에 네임스페이스 부여하는 메서드 (default: / 네임스페이스 접속), 같은 네임스페이스끼리만 데이터 전달
+    const chat = io.of('/chat');
+
+    room.on('connection', (socket) => { // /room 네임스페이스에 이벤트 리스너 붙임
+        console.log('room 네임스페이스에 접속');
+        socket.on('disconnect', () => {
+            console.log('room 네임스페이스 접속 해제');
+        });
+    });
+
+    chat.on('connection', (socket) => { // /chat 네임스페이스에 이벤트 리스너 붙임
+        console.log('chat 네임스페이스 접속');
+
+        socket.on('join', (data) => { // data: 브라우저에서 보낸 방 아이디
+            socket.join(data); // 네임스페이스 아래 존재하는 방에 접속 // 이 이벤트는 connection, disconnect 이벤트와 달리 직접 만든 이벤트
+        });
+
+        socket.on('disconnect', () => {
+            console.log('chat 네임스페이스 접속 해제');
+        });
+    });
+}; 
