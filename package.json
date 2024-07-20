@@ -12,11 +12,14 @@
     "nodemon": "^3.1.4"
   },
   "dependencies": {
+    "color-hash": "^2.0.2",
     "cookie-parser": "^1.4.6",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
     "express-session": "^1.18.0",
+    "mongoose": "^8.5.1",
     "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
     "nunjucks": "^3.2.4",
     "socket.io": "^4.7.5",
     "ws": "^8.18.0"
