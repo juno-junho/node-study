@@ -15,6 +15,11 @@
 ## 📌 PostgreSQL
 - [MySQL vs PostgreSQL 비교](https://kaput-trombone-343.notion.site/MySQL-vs-PostgreSQL-f892abc0eec344938184057fd769707d?pvs=4)
 
+## 📌 WebSocket(Socket.io) & Electron Framwork
+- [WebSocket과 Socket.io에 대해서](https://kaput-trombone-343.notion.site/Socket-IO-e7fcce45001746ab94a88b9e1d48b768?pvs=4)
+- [Electron 프레임워크 작동원리](https://kaput-trombone-343.notion.site/Electron-564bec848137469c916f8216d437ca30?pvs=4)
+- [Electron 프레임워크의 프로세스 모델](https://kaput-trombone-343.notion.site/Electron-d9c98b4e359f45bc9297174441e6a817?pvs=4)
+
 ## 📌 Git 관련 블로그 포스팅
 - [기본적인 git 사용법](https://juno-juno.tistory.com/45)
 - [git에서의 upstream/downstream & git 객체](https://juno-juno.tistory.com/85)
@@ -22,9 +27,3 @@
 - [git stash란](https://juno-juno.tistory.com/94)
 - [Github SSH 원격 접속을 통한 토큰 없는 push하기](https://juno-juno.tistory.com/48)
 - [그외 트러블 슈팅](https://juno-juno.tistory.com/77)
-
-## 📌 WebSocket(Socket.io) & Electron Framwork
-- [WebSocket과 Socket.io에 대해서](https://kaput-trombone-343.notion.site/Socket-IO-e7fcce45001746ab94a88b9e1d48b768?pvs=4)
-- [Electron 프레임워크 작동원리](https://kaput-trombone-343.notion.site/Electron-564bec848137469c916f8216d437ca30?pvs=4)
-- [Electron 프레임워크의 프로세스 모델](https://kaput-trombone-343.notion.site/Electron-d9c98b4e359f45bc9297174441e6a817?pvs=4)
-
