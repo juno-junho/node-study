@@ -23,7 +23,8 @@
 - [Github SSH 원격 접속을 통한 토큰 없는 push하기](https://juno-juno.tistory.com/48)
 - [그외 트러블 슈팅](https://juno-juno.tistory.com/77)
 
-## 📌 기타
+## 📌 WebSocket(Socket.io) & Electron Framwork
 - [WebSocket과 Socket.io에 대해서](https://kaput-trombone-343.notion.site/Socket-IO-e7fcce45001746ab94a88b9e1d48b768?pvs=4)
-- [Electron 프레임워크에 대해서](https://kaput-trombone-343.notion.site/Electron-564bec848137469c916f8216d437ca30?pvs=4)
+- [Electron 프레임워크 작동원리](https://kaput-trombone-343.notion.site/Electron-564bec848137469c916f8216d437ca30?pvs=4)
+- [Electron 프레임워크의 프로세스 모델](https://kaput-trombone-343.notion.site/Electron-d9c98b4e359f45bc9297174441e6a817?pvs=4)
 
