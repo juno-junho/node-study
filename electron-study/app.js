@@ -10,11 +10,16 @@ console.log('Hello from Electron 👋')
 const { app, BrowserWindow } = require('electron')
 // app : controls your application's event lifecycle.
 // BrowserWindow : creates and manages app windows
+const path = require('node:path')
+
 
 const createWindow = () => { // load web page into new BrowserWindow
     const win = new BrowserWindow({
         width: 800,
-        height: 600
+        height: 600,
+        webPreferences: {
+            preload: path.join(__dirname, 'preload.js')
+        }
     })
 
     win.loadFile('index.html')
