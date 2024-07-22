@@ -7,7 +7,7 @@
  */
 console.log('Hello from Electron 👋')
 
-const { app, BrowserWindow } = require('electron')
+const { app, BrowserWindow , ipcMain} = require('electron')
 // app : controls your application's event lifecycle.
 // BrowserWindow : creates and manages app windows
 const path = require('node:path')
@@ -33,6 +33,7 @@ const createWindow = () => { // load web page into new BrowserWindow
  * app.whenReady() api를 통해서 ready 이벤트를 기다릴 수 있고, 프로미스가 fulfilled 되면 createWindow()를 호출 가능
  */
 app.whenReady().then(() => {
+    ipcMain.handle('ping', () => 'pong')
     createWindow()
 
     app.on('activate', () => {
