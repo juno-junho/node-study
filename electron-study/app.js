@@ -14,6 +14,10 @@ const path = require('node:path')
 
 
 const createWindow = () => { // load web page into new BrowserWindow
+    const girhubWin = new BrowserWindow({
+        width: 800,
+        height: 1500
+    })
     const win = new BrowserWindow({
         width: 800,
         height: 600,
@@ -22,7 +26,11 @@ const createWindow = () => { // load web page into new BrowserWindow
         }
     })
 
-    win.loadFile('index.html')
+    win.loadFile('index.html');
+    girhubWin.loadURL('https://github.com');
+
+    console.log(win.webContents);
+    console.log(girhubWin.webContents);
 }
 
 /**
