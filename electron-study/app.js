@@ -29,4 +29,25 @@ const createWindow = () => { // load web page into new BrowserWindow
  */
 app.whenReady().then(() => {
     createWindow()
+
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow()
+        }
+    })
+})
+
+console.log(process.platform); // 'darwin' -> macOS, 'win32' -> Windows, 'linux' -> Linux
+
+/**
+ * application window는 운영체제에 따라 다르게 동작한다.
+ * electron은 이러한 컨벤션을 default로 따르는대신, 따를지 선택 가능하다.
+ *
+ */
+// window나 linux에서 window 닫는 것은 application을 전체 종료하는 것이다.
+// 반면 macOS에서는 window가 열려있지 않아도 계쏙 동작한다. window가 사용가능하지 않을 때 app을 동작시키기 위해서 새로운 창을 열어야한다
+app.on('window-all-closed', () => {
+    if (process.platform !== 'darwin') {
+        app.quit()
+    }
 })
