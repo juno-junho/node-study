@@ -6,11 +6,13 @@
 - [Client에서 Server로 API 요청시 어떤 것을 사용해야할까? Ajax vs Axios vs Fetch API](https://kaput-trombone-343.notion.site/Ajax-vs-axios-vs-fetch-API-1d47b90eadba48edbbeb40b9c6f89f43?pvs=4) 
 - [Promise에 대해서](https://kaput-trombone-343.notion.site/Promise-95fc7e252eda42ffb63db31ed17e9052?pvs=4)
 - [제너레이터와 async / await](https://kaput-trombone-343.notion.site/async-await-1c7377a0e8b04a97b678c6a06cff729d?pvs=4)
+- [실행 컨텍스트](https://kaput-trombone-343.notion.site/Execution-Context-adfeb0efaf0a4947beaf9c1df6bdc2e5?pvs=4)
 - [var 대신 const, let을 사용해야 하는이유](https://kaput-trombone-343.notion.site/var-const-let-9e1ef5ea217341d389e0cefe7e8f246f?pvs=4)
 - [jQuery vs Vanila JS, 어떤것을 사용해야 할까](https://kaput-trombone-343.notion.site/jQuery-df07aa0eec7342ac9307389239c57590?pvs=4)
 
 ## 📌 Node.js
 - [Node.js 작동원리 및 장단점](https://kaput-trombone-343.notion.site/Node-js-6d1c2160ddfd47c6b1d3994154433c04?pvs=4)
+- [Non-Blocking I/O vs Blocking I/O / 동기 vs 비동기](https://juno-juno.tistory.com/90)
 
 ## 📌 PostgreSQL
 - [MySQL vs PostgreSQL 비교](https://kaput-trombone-343.notion.site/MySQL-vs-PostgreSQL-f892abc0eec344938184057fd769707d?pvs=4)
